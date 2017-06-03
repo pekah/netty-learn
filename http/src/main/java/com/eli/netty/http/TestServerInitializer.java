@@ -1,4 +1,4 @@
-package com.eli.netty.firstexample;
+package com.eli.netty.http;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
