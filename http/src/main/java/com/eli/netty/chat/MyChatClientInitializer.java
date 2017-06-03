@@ -10,9 +10,9 @@ import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 
 /**
- * Created by zhouyilin on 2017/5/30.
+ * Created by zhouyilin on 2017/6/3.
  */
-public class MyChatServerInitializer extends ChannelInitializer<SocketChannel>{
+public class MyChatClientInitializer extends ChannelInitializer<SocketChannel>{
 
     @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
@@ -21,7 +21,6 @@ public class MyChatServerInitializer extends ChannelInitializer<SocketChannel>{
         pipeline.addLast(new DelimiterBasedFrameDecoder(4096, Delimiters.lineDelimiter()));
         pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
         pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
-        pipeline.addLast(new MyChatServerHandler());
-
+        pipeline.addLast(new MyChatClientHandler());
     }
 }
