@@ -12,7 +12,7 @@ public class PersonService {
 
   public interface Iface {
 
-    public Person getPersonByUsrname(String username) throws DataException, org.apache.thrift.TException;
+    public Person getPersonByUsrname(java.lang.String username) throws DataException, org.apache.thrift.TException;
 
     public void savePerson(Person person) throws DataException, org.apache.thrift.TException;
 
@@ -20,7 +20,7 @@ public class PersonService {
 
   public interface AsyncIface {
 
-    public void getPersonByUsrname(String username, org.apache.thrift.async.AsyncMethodCallback<Person> resultHandler) throws org.apache.thrift.TException;
+    public void getPersonByUsrname(java.lang.String username, org.apache.thrift.async.AsyncMethodCallback<Person> resultHandler) throws org.apache.thrift.TException;
 
     public void savePerson(Person person, org.apache.thrift.async.AsyncMethodCallback<Void> resultHandler) throws org.apache.thrift.TException;
 
@@ -46,13 +46,13 @@ public class PersonService {
       super(iprot, oprot);
     }
 
-    public Person getPersonByUsrname(String username) throws DataException, org.apache.thrift.TException
+    public Person getPersonByUsrname(java.lang.String username) throws DataException, org.apache.thrift.TException
     {
       send_getPersonByUsrname(username);
       return recv_getPersonByUsrname();
     }
 
-    public void send_getPersonByUsrname(String username) throws org.apache.thrift.TException
+    public void send_getPersonByUsrname(java.lang.String username) throws org.apache.thrift.TException
     {
       getPersonByUsrname_args args = new getPersonByUsrname_args();
       args.setUsername(username);
@@ -113,7 +113,7 @@ public class PersonService {
       super(protocolFactory, clientManager, transport);
     }
 
-    public void getPersonByUsrname(String username, org.apache.thrift.async.AsyncMethodCallback<Person> resultHandler) throws org.apache.thrift.TException {
+    public void getPersonByUsrname(java.lang.String username, org.apache.thrift.async.AsyncMethodCallback<Person> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       getPersonByUsrname_call method_call = new getPersonByUsrname_call(username, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
@@ -121,8 +121,8 @@ public class PersonService {
     }
 
     public static class getPersonByUsrname_call extends org.apache.thrift.async.TAsyncMethodCall<Person> {
-      private String username;
-      public getPersonByUsrname_call(String username, org.apache.thrift.async.AsyncMethodCallback<Person> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      private java.lang.String username;
+      public getPersonByUsrname_call(java.lang.String username, org.apache.thrift.async.AsyncMethodCallback<Person> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.username = username;
       }
@@ -136,8 +136,8 @@ public class PersonService {
       }
 
       public Person getResult() throws DataException, org.apache.thrift.TException {
-        if (getState() != State.RESPONSE_READ) {
-          throw new IllegalStateException("Method call not finished!");
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
         }
         org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
         org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
@@ -168,8 +168,8 @@ public class PersonService {
       }
 
       public Void getResult() throws DataException, org.apache.thrift.TException {
-        if (getState() != State.RESPONSE_READ) {
-          throw new IllegalStateException("Method call not finished!");
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
         }
         org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
         org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
@@ -182,14 +182,14 @@ public class PersonService {
   public static class Processor<I extends Iface> extends org.apache.thrift.TBaseProcessor<I> implements org.apache.thrift.TProcessor {
     private static final org.slf4j.Logger _LOGGER = org.slf4j.LoggerFactory.getLogger(Processor.class.getName());
     public Processor(I iface) {
-      super(iface, getProcessMap(new java.util.HashMap<String, org.apache.thrift.ProcessFunction<I, ? extends org.apache.thrift.TBase>>()));
+      super(iface, getProcessMap(new java.util.HashMap<java.lang.String, org.apache.thrift.ProcessFunction<I, ? extends org.apache.thrift.TBase>>()));
     }
 
-    protected Processor(I iface, java.util.Map<String, org.apache.thrift.ProcessFunction<I, ? extends org.apache.thrift.TBase>> processMap) {
+    protected Processor(I iface, java.util.Map<java.lang.String, org.apache.thrift.ProcessFunction<I, ? extends org.apache.thrift.TBase>> processMap) {
       super(iface, getProcessMap(processMap));
     }
 
-    private static <I extends Iface> java.util.Map<String,  org.apache.thrift.ProcessFunction<I, ? extends org.apache.thrift.TBase>> getProcessMap(java.util.Map<String, org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> processMap) {
+    private static <I extends Iface> java.util.Map<java.lang.String,  org.apache.thrift.ProcessFunction<I, ? extends org.apache.thrift.TBase>> getProcessMap(java.util.Map<java.lang.String, org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> processMap) {
       processMap.put("getPersonByUsrname", new getPersonByUsrname());
       processMap.put("savePerson", new savePerson());
       return processMap;
@@ -248,14 +248,14 @@ public class PersonService {
   public static class AsyncProcessor<I extends AsyncIface> extends org.apache.thrift.TBaseAsyncProcessor<I> {
     private static final org.slf4j.Logger _LOGGER = org.slf4j.LoggerFactory.getLogger(AsyncProcessor.class.getName());
     public AsyncProcessor(I iface) {
-      super(iface, getProcessMap(new java.util.HashMap<String, org.apache.thrift.AsyncProcessFunction<I, ? extends org.apache.thrift.TBase, ?>>()));
+      super(iface, getProcessMap(new java.util.HashMap<java.lang.String, org.apache.thrift.AsyncProcessFunction<I, ? extends org.apache.thrift.TBase, ?>>()));
     }
 
-    protected AsyncProcessor(I iface, java.util.Map<String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase, ?>> processMap) {
+    protected AsyncProcessor(I iface, java.util.Map<java.lang.String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase, ?>> processMap) {
       super(iface, getProcessMap(processMap));
     }
 
-    private static <I extends AsyncIface> java.util.Map<String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase,?>> getProcessMap(java.util.Map<String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase, ?>> processMap) {
+    private static <I extends AsyncIface> java.util.Map<java.lang.String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase,?>> getProcessMap(java.util.Map<java.lang.String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase, ?>> processMap) {
       processMap.put("getPersonByUsrname", new getPersonByUsrname());
       processMap.put("savePerson", new savePerson());
       return processMap;
@@ -281,12 +281,12 @@ public class PersonService {
             } catch (org.apache.thrift.transport.TTransportException e) {
               _LOGGER.error("TTransportException writing to internal frame buffer", e);
               fb.close();
-            } catch (Exception e) {
+            } catch (java.lang.Exception e) {
               _LOGGER.error("Exception writing to internal frame buffer", e);
               onError(e);
             }
           }
-          public void onError(Exception e) {
+          public void onError(java.lang.Exception e) {
             byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
             org.apache.thrift.TSerializable msg;
             getPersonByUsrname_result result = new getPersonByUsrname_result();
@@ -309,7 +309,7 @@ public class PersonService {
             }
             try {
               fcall.sendResponse(fb,msg,msgType,seqid);
-            } catch (Exception ex) {
+            } catch (java.lang.Exception ex) {
               _LOGGER.error("Exception writing to internal frame buffer", ex);
               fb.close();
             }
@@ -345,12 +345,12 @@ public class PersonService {
             } catch (org.apache.thrift.transport.TTransportException e) {
               _LOGGER.error("TTransportException writing to internal frame buffer", e);
               fb.close();
-            } catch (Exception e) {
+            } catch (java.lang.Exception e) {
               _LOGGER.error("Exception writing to internal frame buffer", e);
               onError(e);
             }
           }
-          public void onError(Exception e) {
+          public void onError(java.lang.Exception e) {
             byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
             org.apache.thrift.TSerializable msg;
             savePerson_result result = new savePerson_result();
@@ -373,7 +373,7 @@ public class PersonService {
             }
             try {
               fcall.sendResponse(fb,msg,msgType,seqid);
-            } catch (Exception ex) {
+            } catch (java.lang.Exception ex) {
               _LOGGER.error("Exception writing to internal frame buffer", ex);
               fb.close();
             }
@@ -400,13 +400,13 @@ public class PersonService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new getPersonByUsrname_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new getPersonByUsrname_argsTupleSchemeFactory();
 
-    public String username; // required
+    public java.lang.String username; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       USERNAME((short)1, "username");
 
-      private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
       static {
         for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -432,21 +432,21 @@ public class PersonService {
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
         return fields;
       }
 
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      public static _Fields findByName(String name) {
+      public static _Fields findByName(java.lang.String name) {
         return byName.get(name);
       }
 
       private final short _thriftId;
-      private final String _fieldName;
+      private final java.lang.String _fieldName;
 
-      _Fields(short thriftId, String fieldName) {
+      _Fields(short thriftId, java.lang.String fieldName) {
         _thriftId = thriftId;
         _fieldName = fieldName;
       }
@@ -455,7 +455,7 @@ public class PersonService {
         return _thriftId;
       }
 
-      public String getFieldName() {
+      public java.lang.String getFieldName() {
         return _fieldName;
       }
     }
@@ -474,7 +474,7 @@ public class PersonService {
     }
 
     public getPersonByUsrname_args(
-      String username)
+      java.lang.String username)
     {
       this();
       this.username = username;
@@ -498,11 +498,11 @@ public class PersonService {
       this.username = null;
     }
 
-    public String getUsername() {
+    public java.lang.String getUsername() {
       return this.username;
     }
 
-    public getPersonByUsrname_args setUsername(String username) {
+    public getPersonByUsrname_args setUsername(java.lang.String username) {
       this.username = username;
       return this;
     }
@@ -522,43 +522,43 @@ public class PersonService {
       }
     }
 
-    public void setFieldValue(_Fields field, Object value) {
+    public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
       case USERNAME:
         if (value == null) {
           unsetUsername();
         } else {
-          setUsername((String)value);
+          setUsername((java.lang.String)value);
         }
         break;
 
       }
     }
 
-    public Object getFieldValue(_Fields field) {
+    public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case USERNAME:
         return getUsername();
 
       }
-      throw new IllegalStateException();
+      throw new java.lang.IllegalStateException();
     }
 
     /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
     public boolean isSet(_Fields field) {
       if (field == null) {
-        throw new IllegalArgumentException();
+        throw new java.lang.IllegalArgumentException();
       }
 
       switch (field) {
       case USERNAME:
         return isSetUsername();
       }
-      throw new IllegalStateException();
+      throw new java.lang.IllegalStateException();
     }
 
     @Override
-    public boolean equals(Object that) {
+    public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
       if (that instanceof getPersonByUsrname_args)
@@ -603,7 +603,7 @@ public class PersonService {
 
       int lastComparison = 0;
 
-      lastComparison = Boolean.valueOf(isSetUsername()).compareTo(other.isSetUsername());
+      lastComparison = java.lang.Boolean.valueOf(isSetUsername()).compareTo(other.isSetUsername());
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -629,8 +629,8 @@ public class PersonService {
     }
 
     @Override
-    public String toString() {
-      StringBuilder sb = new StringBuilder("getPersonByUsrname_args(");
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("getPersonByUsrname_args(");
       boolean first = true;
 
       sb.append("username:");
@@ -660,7 +660,7 @@ public class PersonService {
       }
     }
 
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
       try {
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {
@@ -764,7 +764,7 @@ public class PersonService {
       SUCCESS((short)0, "success"),
       DATA_EXCEPTION((short)1, "dataException");
 
-      private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
       static {
         for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -792,21 +792,21 @@ public class PersonService {
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
         return fields;
       }
 
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      public static _Fields findByName(String name) {
+      public static _Fields findByName(java.lang.String name) {
         return byName.get(name);
       }
 
       private final short _thriftId;
-      private final String _fieldName;
+      private final java.lang.String _fieldName;
 
-      _Fields(short thriftId, String fieldName) {
+      _Fields(short thriftId, java.lang.String fieldName) {
         _thriftId = thriftId;
         _fieldName = fieldName;
       }
@@ -815,7 +815,7 @@ public class PersonService {
         return _thriftId;
       }
 
-      public String getFieldName() {
+      public java.lang.String getFieldName() {
         return _fieldName;
       }
     }
@@ -914,7 +914,7 @@ public class PersonService {
       }
     }
 
-    public void setFieldValue(_Fields field, Object value) {
+    public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
       case SUCCESS:
         if (value == null) {
@@ -935,7 +935,7 @@ public class PersonService {
       }
     }
 
-    public Object getFieldValue(_Fields field) {
+    public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
         return getSuccess();
@@ -944,13 +944,13 @@ public class PersonService {
         return getDataException();
 
       }
-      throw new IllegalStateException();
+      throw new java.lang.IllegalStateException();
     }
 
     /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
     public boolean isSet(_Fields field) {
       if (field == null) {
-        throw new IllegalArgumentException();
+        throw new java.lang.IllegalArgumentException();
       }
 
       switch (field) {
@@ -959,11 +959,11 @@ public class PersonService {
       case DATA_EXCEPTION:
         return isSetDataException();
       }
-      throw new IllegalStateException();
+      throw new java.lang.IllegalStateException();
     }
 
     @Override
-    public boolean equals(Object that) {
+    public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
       if (that instanceof getPersonByUsrname_result)
@@ -1021,7 +1021,7 @@ public class PersonService {
 
       int lastComparison = 0;
 
-      lastComparison = Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
+      lastComparison = java.lang.Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -1031,7 +1031,7 @@ public class PersonService {
           return lastComparison;
         }
       }
-      lastComparison = Boolean.valueOf(isSetDataException()).compareTo(other.isSetDataException());
+      lastComparison = java.lang.Boolean.valueOf(isSetDataException()).compareTo(other.isSetDataException());
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -1057,8 +1057,8 @@ public class PersonService {
       }
 
     @Override
-    public String toString() {
-      StringBuilder sb = new StringBuilder("getPersonByUsrname_result(");
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("getPersonByUsrname_result(");
       boolean first = true;
 
       sb.append("success:");
@@ -1096,7 +1096,7 @@ public class PersonService {
       }
     }
 
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
       try {
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {
@@ -1234,7 +1234,7 @@ public class PersonService {
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       PERSON((short)1, "person");
 
-      private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
       static {
         for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -1260,21 +1260,21 @@ public class PersonService {
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
         return fields;
       }
 
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      public static _Fields findByName(String name) {
+      public static _Fields findByName(java.lang.String name) {
         return byName.get(name);
       }
 
       private final short _thriftId;
-      private final String _fieldName;
+      private final java.lang.String _fieldName;
 
-      _Fields(short thriftId, String fieldName) {
+      _Fields(short thriftId, java.lang.String fieldName) {
         _thriftId = thriftId;
         _fieldName = fieldName;
       }
@@ -1283,7 +1283,7 @@ public class PersonService {
         return _thriftId;
       }
 
-      public String getFieldName() {
+      public java.lang.String getFieldName() {
         return _fieldName;
       }
     }
@@ -1350,7 +1350,7 @@ public class PersonService {
       }
     }
 
-    public void setFieldValue(_Fields field, Object value) {
+    public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
       case PERSON:
         if (value == null) {
@@ -1363,30 +1363,30 @@ public class PersonService {
       }
     }
 
-    public Object getFieldValue(_Fields field) {
+    public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case PERSON:
         return getPerson();
 
       }
-      throw new IllegalStateException();
+      throw new java.lang.IllegalStateException();
     }
 
     /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
     public boolean isSet(_Fields field) {
       if (field == null) {
-        throw new IllegalArgumentException();
+        throw new java.lang.IllegalArgumentException();
       }
 
       switch (field) {
       case PERSON:
         return isSetPerson();
       }
-      throw new IllegalStateException();
+      throw new java.lang.IllegalStateException();
     }
 
     @Override
-    public boolean equals(Object that) {
+    public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
       if (that instanceof savePerson_args)
@@ -1431,7 +1431,7 @@ public class PersonService {
 
       int lastComparison = 0;
 
-      lastComparison = Boolean.valueOf(isSetPerson()).compareTo(other.isSetPerson());
+      lastComparison = java.lang.Boolean.valueOf(isSetPerson()).compareTo(other.isSetPerson());
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -1457,8 +1457,8 @@ public class PersonService {
     }
 
     @Override
-    public String toString() {
-      StringBuilder sb = new StringBuilder("savePerson_args(");
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("savePerson_args(");
       boolean first = true;
 
       sb.append("person:");
@@ -1491,7 +1491,7 @@ public class PersonService {
       }
     }
 
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
       try {
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {
@@ -1594,7 +1594,7 @@ public class PersonService {
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       DATA_EXCEPTION((short)1, "dataException");
 
-      private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
       static {
         for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -1620,21 +1620,21 @@ public class PersonService {
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
-        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
         return fields;
       }
 
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      public static _Fields findByName(String name) {
+      public static _Fields findByName(java.lang.String name) {
         return byName.get(name);
       }
 
       private final short _thriftId;
-      private final String _fieldName;
+      private final java.lang.String _fieldName;
 
-      _Fields(short thriftId, String fieldName) {
+      _Fields(short thriftId, java.lang.String fieldName) {
         _thriftId = thriftId;
         _fieldName = fieldName;
       }
@@ -1643,7 +1643,7 @@ public class PersonService {
         return _thriftId;
       }
 
-      public String getFieldName() {
+      public java.lang.String getFieldName() {
         return _fieldName;
       }
     }
@@ -1710,7 +1710,7 @@ public class PersonService {
       }
     }
 
-    public void setFieldValue(_Fields field, Object value) {
+    public void setFieldValue(_Fields field, java.lang.Object value) {
       switch (field) {
       case DATA_EXCEPTION:
         if (value == null) {
@@ -1723,30 +1723,30 @@ public class PersonService {
       }
     }
 
-    public Object getFieldValue(_Fields field) {
+    public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case DATA_EXCEPTION:
         return getDataException();
 
       }
-      throw new IllegalStateException();
+      throw new java.lang.IllegalStateException();
     }
 
     /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
     public boolean isSet(_Fields field) {
       if (field == null) {
-        throw new IllegalArgumentException();
+        throw new java.lang.IllegalArgumentException();
       }
 
       switch (field) {
       case DATA_EXCEPTION:
         return isSetDataException();
       }
-      throw new IllegalStateException();
+      throw new java.lang.IllegalStateException();
     }
 
     @Override
-    public boolean equals(Object that) {
+    public boolean equals(java.lang.Object that) {
       if (that == null)
         return false;
       if (that instanceof savePerson_result)
@@ -1791,7 +1791,7 @@ public class PersonService {
 
       int lastComparison = 0;
 
-      lastComparison = Boolean.valueOf(isSetDataException()).compareTo(other.isSetDataException());
+      lastComparison = java.lang.Boolean.valueOf(isSetDataException()).compareTo(other.isSetDataException());
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -1817,8 +1817,8 @@ public class PersonService {
       }
 
     @Override
-    public String toString() {
-      StringBuilder sb = new StringBuilder("savePerson_result(");
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("savePerson_result(");
       boolean first = true;
 
       sb.append("dataException:");
@@ -1845,7 +1845,7 @@ public class PersonService {
       }
     }
 
-    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
       try {
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {

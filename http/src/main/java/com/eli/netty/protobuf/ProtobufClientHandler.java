@@ -3,13 +3,15 @@ package com.eli.netty.protobuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
+import java.util.Random;
+
 /**
  * Created by zhouyilin on 2017/6/8.
  */
-public class ProtobufClientHandler extends SimpleChannelInboundHandler<MyDataInfo.Person> {
+public class ProtobufClientHandler extends SimpleChannelInboundHandler<MyDataInfo.MyMessage> {
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, MyDataInfo.Person person) throws Exception {
+    protected void channelRead0(ChannelHandlerContext channelHandlerContext, MyDataInfo.MyMessage msg) throws Exception {
 
     }
 
@@ -17,8 +19,30 @@ public class ProtobufClientHandler extends SimpleChannelInboundHandler<MyDataInf
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
 
-        MyDataInfo.Person person = MyDataInfo.Person.newBuilder().setName("张三").setAge(20).setAddress("beijing").build();
-        ctx.writeAndFlush(person);
+        int randomInt = new Random().nextInt(3);
+        MyDataInfo.MyMessage myMessage = null;
+
+        if(0 == randomInt){
+            myMessage = MyDataInfo.MyMessage.newBuilder().
+                    setDataType(MyDataInfo.MyMessage.DataType.PersonType).
+                    setPerson(MyDataInfo.Person.newBuilder().
+                            setName("张三").setAge(20).setAddress("北京").build()).
+                    build();
+        }else if(1 == randomInt){
+            myMessage = MyDataInfo.MyMessage.newBuilder().
+                    setDataType(MyDataInfo.MyMessage.DataType.DogType).
+                    setDog(MyDataInfo.Dog.newBuilder().
+                            setName("一只狗").setAge(20).build()).
+                    build();
+        }else {
+            myMessage = MyDataInfo.MyMessage.newBuilder().
+                    setDataType(MyDataInfo.MyMessage.DataType.CatType).
+                    setCat(MyDataInfo.Cat.newBuilder().
+                            setName("一只猫").setCity("上海").build()).
+                    build();
+        }
+
+        ctx.writeAndFlush(myMessage);
     }
 }
 

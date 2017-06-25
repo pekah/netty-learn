@@ -18,9 +18,9 @@ public class DataException extends org.apache.thrift.TException implements org.a
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new DataExceptionStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new DataExceptionTupleSchemeFactory();
 
-  public String message; // optional
-  public String callStack; // optional
-  public String date; // optional
+  public java.lang.String message; // optional
+  public java.lang.String callStack; // optional
+  public java.lang.String date; // optional
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -28,7 +28,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
     CALL_STACK((short)2, "callStack"),
     DATE((short)3, "date");
 
-    private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
+    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
     static {
       for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -58,21 +58,21 @@ public class DataException extends org.apache.thrift.TException implements org.a
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
-      if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+      if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
       return fields;
     }
 
     /**
      * Find the _Fields constant that matches name, or null if its not found.
      */
-    public static _Fields findByName(String name) {
+    public static _Fields findByName(java.lang.String name) {
       return byName.get(name);
     }
 
     private final short _thriftId;
-    private final String _fieldName;
+    private final java.lang.String _fieldName;
 
-    _Fields(short thriftId, String fieldName) {
+    _Fields(short thriftId, java.lang.String fieldName) {
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
@@ -81,7 +81,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
       return _thriftId;
     }
 
-    public String getFieldName() {
+    public java.lang.String getFieldName() {
       return _fieldName;
     }
   }
@@ -130,11 +130,11 @@ public class DataException extends org.apache.thrift.TException implements org.a
     this.date = null;
   }
 
-  public String getMessage() {
+  public java.lang.String getMessage() {
     return this.message;
   }
 
-  public DataException setMessage(String message) {
+  public DataException setMessage(java.lang.String message) {
     this.message = message;
     return this;
   }
@@ -154,11 +154,11 @@ public class DataException extends org.apache.thrift.TException implements org.a
     }
   }
 
-  public String getCallStack() {
+  public java.lang.String getCallStack() {
     return this.callStack;
   }
 
-  public DataException setCallStack(String callStack) {
+  public DataException setCallStack(java.lang.String callStack) {
     this.callStack = callStack;
     return this;
   }
@@ -178,11 +178,11 @@ public class DataException extends org.apache.thrift.TException implements org.a
     }
   }
 
-  public String getDate() {
+  public java.lang.String getDate() {
     return this.date;
   }
 
-  public DataException setDate(String date) {
+  public DataException setDate(java.lang.String date) {
     this.date = date;
     return this;
   }
@@ -202,13 +202,13 @@ public class DataException extends org.apache.thrift.TException implements org.a
     }
   }
 
-  public void setFieldValue(_Fields field, Object value) {
+  public void setFieldValue(_Fields field, java.lang.Object value) {
     switch (field) {
     case MESSAGE:
       if (value == null) {
         unsetMessage();
       } else {
-        setMessage((String)value);
+        setMessage((java.lang.String)value);
       }
       break;
 
@@ -216,7 +216,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
       if (value == null) {
         unsetCallStack();
       } else {
-        setCallStack((String)value);
+        setCallStack((java.lang.String)value);
       }
       break;
 
@@ -224,14 +224,14 @@ public class DataException extends org.apache.thrift.TException implements org.a
       if (value == null) {
         unsetDate();
       } else {
-        setDate((String)value);
+        setDate((java.lang.String)value);
       }
       break;
 
     }
   }
 
-  public Object getFieldValue(_Fields field) {
+  public java.lang.Object getFieldValue(_Fields field) {
     switch (field) {
     case MESSAGE:
       return getMessage();
@@ -243,13 +243,13 @@ public class DataException extends org.apache.thrift.TException implements org.a
       return getDate();
 
     }
-    throw new IllegalStateException();
+    throw new java.lang.IllegalStateException();
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
   public boolean isSet(_Fields field) {
     if (field == null) {
-      throw new IllegalArgumentException();
+      throw new java.lang.IllegalArgumentException();
     }
 
     switch (field) {
@@ -260,11 +260,11 @@ public class DataException extends org.apache.thrift.TException implements org.a
     case DATE:
       return isSetDate();
     }
-    throw new IllegalStateException();
+    throw new java.lang.IllegalStateException();
   }
 
   @Override
-  public boolean equals(Object that) {
+  public boolean equals(java.lang.Object that) {
     if (that == null)
       return false;
     if (that instanceof DataException)
@@ -335,7 +335,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
 
     int lastComparison = 0;
 
-    lastComparison = Boolean.valueOf(isSetMessage()).compareTo(other.isSetMessage());
+    lastComparison = java.lang.Boolean.valueOf(isSetMessage()).compareTo(other.isSetMessage());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -345,7 +345,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetCallStack()).compareTo(other.isSetCallStack());
+    lastComparison = java.lang.Boolean.valueOf(isSetCallStack()).compareTo(other.isSetCallStack());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -355,7 +355,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
         return lastComparison;
       }
     }
-    lastComparison = Boolean.valueOf(isSetDate()).compareTo(other.isSetDate());
+    lastComparison = java.lang.Boolean.valueOf(isSetDate()).compareTo(other.isSetDate());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -381,8 +381,8 @@ public class DataException extends org.apache.thrift.TException implements org.a
   }
 
   @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder("DataException(");
+  public java.lang.String toString() {
+    java.lang.StringBuilder sb = new java.lang.StringBuilder("DataException(");
     boolean first = true;
 
     if (isSetMessage()) {
@@ -431,7 +431,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
     }
   }
 
-  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
     try {
       read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
     } catch (org.apache.thrift.TException te) {
