@@ -14,9 +14,9 @@ public class TcpServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         try {
-            // 接收客户端的数据
-            ByteBuf in = (ByteBuf)msg;
-            System.out.println("channelRead:" + in.toString(CharsetUtil.UTF_8));
+            // msg经过StringDecoder后类型不再是ByteBuf而是String
+            String line = (String) msg;
+            System.out.println("channelRead:" + line);
 
             //发送到客户端
             byte[] respByteArray = "你好".getBytes("UTF-8");

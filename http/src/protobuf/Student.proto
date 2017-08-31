@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package com.eli.netty_learn;
+package com.eli.netty;
 
 option optimize_for = SPEED;
 option java_package = "com.eli.netty.protobuf";

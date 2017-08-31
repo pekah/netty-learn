@@ -1,5 +1,6 @@
 package com.eli.netty.tcp;
 
+import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -20,7 +21,16 @@ public class TcpClient {
             outputStream = socket.getOutputStream();
 
             //请求服务器
-            outputStream.write("第一次请求".getBytes("UTF-8"));
+            String lines = "床前明月光\r\n疑是地上霜\r\n举头望明月\r\n低头";
+            byte[] outputBytes = lines.getBytes("UTF-8");
+
+            outputStream.write(outputBytes);
+            outputStream.flush();
+
+            lines = "思故乡\r\n";
+            outputBytes = lines.getBytes("UTF-8");
+
+            outputStream.write(outputBytes);
             outputStream.flush();
 
             //获取服务器响应，输出

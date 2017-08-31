@@ -4,7 +4,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Created by zhouyilin on 2017/6/3.
@@ -15,7 +15,7 @@ public class TextWebSocketFrameHandler extends SimpleChannelInboundHandler<TextW
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, TextWebSocketFrame textWebSocketFrame) throws Exception {
         System.out.println("收到消息： " + textWebSocketFrame.text());
 
-        channelHandlerContext.channel().writeAndFlush(new TextWebSocketFrame("服务器时间： " + LocalDateTime.now()));
+        channelHandlerContext.channel().writeAndFlush(new TextWebSocketFrame("服务器时间： " + new Date()));
     }
 
     @Override
