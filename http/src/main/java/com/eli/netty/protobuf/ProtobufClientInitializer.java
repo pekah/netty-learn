@@ -22,6 +22,7 @@ public class ProtobufClientInitializer extends ChannelInitializer<SocketChannel>
 
         pipeline.addLast(new ProtobufVarint32FrameDecoder());
 //        pipeline.addLast(new ProtobufDecoder());
+        pipeline.addLast(new ProtobufDecoder(MyDataInfo.MyMessage.getDefaultInstance()));
         pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
         pipeline.addLast(new ProtobufEncoder());
         pipeline.addLast(new ProtobufClientHandler());
