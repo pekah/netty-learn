@@ -19,5 +19,6 @@ public class NioTest1 {
         while (intBuffer.hasRemaining()){
             System.out.println(intBuffer.get());
         }
+
     }
 }
