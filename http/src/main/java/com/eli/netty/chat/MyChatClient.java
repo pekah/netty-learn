@@ -27,7 +27,9 @@ public class MyChatClient {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
             for (;;){
-                channel.writeAndFlush(br.readLine() + "\r\n");
+                ChannelFuture channelFuture = channel.writeAndFlush(br.readLine() + "\r\n");
+                System.out.println("MyChatClient thread name : " + Thread.currentThread().getName());
+                channelFuture.addListener(new MyChannelFutureListener());
             }
 
 
