@@ -18,6 +18,9 @@ public class ByteBufTest {
         System.out.println("writerIndex:" + byteBuf.writerIndex());
         System.out.println("capacity:" + byteBuf.capacity());
 
+        System.out.println("writable bytes length:" + byteBuf.writableBytes());
+        System.out.println("max capacity:" + byteBuf.maxCapacity());
+
         while (byteBuf.isReadable()){
             System.out.println(byteBuf.readByte());
         }

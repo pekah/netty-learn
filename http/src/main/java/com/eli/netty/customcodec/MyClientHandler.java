@@ -12,6 +12,8 @@ public class MyClientHandler extends SimpleChannelInboundHandler<PersonProtocol>
     protected void channelRead0(ChannelHandlerContext ctx, PersonProtocol msg) throws Exception {
         System.out.println("MyClientHandler channelRead0 length : " + msg.getLength());
         System.out.println("MyClientHandler channelRead0 content : " + new String(msg.getContent(), "UTF-8"));
+
+
     }
 
     @Override
