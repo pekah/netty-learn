@@ -64,6 +64,8 @@ public class NioServer {
                                 Charset charset = Charset.forName("utf-8");
                                 String receivedMessage = String.valueOf(charset.decode(readBuffer).array());
 
+                                System.out.println("hello");
+
                                 System.out.println(client + ":" + receivedMessage);
                             }
 

@@ -27,6 +27,29 @@
     </properties>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-client -->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty-shaded</artifactId>
+            <version>1.34.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>1.34.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <version>1.34.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
@@ -35,35 +58,18 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <version>4.11</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.15.Final</version>
-        </dependency>
-        <dependency>
-                
             <groupId>com.google.protobuf</groupId>
-                
             <artifactId>protobuf-java</artifactId>
-                
             <version>3.3.1</version>
         </dependency>
         <dependency>
-                
             <groupId>com.google.protobuf</groupId>
-                
             <artifactId>protobuf-java-util</artifactId>
-                
             <version>3.3.1</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
@@ -86,30 +92,18 @@
             <version>0.10.0</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.1.10.Final</version>
         </dependency>
         <dependency>
-                
             <groupId>com.google.protobuf</groupId>
-                
             <artifactId>protobuf-java</artifactId>
-                
             <version>3.3.1</version>
         </dependency>
         <dependency>
-                
             <groupId>com.google.protobuf</groupId>
-                
             <artifactId>protobuf-java-util</artifactId>
-                
             <version>3.3.1</version>
         </dependency>
     </dependencies>
