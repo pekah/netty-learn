@@ -7,6 +7,7 @@ import io.netty.buffer.Unpooled;
  * Created by elizhou on 2017/11/29.
  */
 public class ByteBufTest {
+    
     public static void main(String[] args) {
         ByteBuf byteBuf = Unpooled.buffer(128);
 
@@ -17,6 +18,9 @@ public class ByteBufTest {
         System.out.println("readrIndex:" + byteBuf.readerIndex());
         System.out.println("writerIndex:" + byteBuf.writerIndex());
         System.out.println("capacity:" + byteBuf.capacity());
+
+        System.out.println("writable bytes length:" + byteBuf.writableBytes());
+        System.out.println("max capacity:" + byteBuf.maxCapacity());
 
         while (byteBuf.isReadable()){
             System.out.println(byteBuf.readByte());
